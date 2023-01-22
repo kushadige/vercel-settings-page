@@ -80,7 +80,7 @@
 }
 
 .content {
-    background-color: brown;
+    /* background-color: brown; */
     flex-grow: 1;
     min-height: 2000px;
 }
@@ -147,8 +147,8 @@
         border-bottom: 1px solid #333;
     }
 
-    .content {
-        /* padding-top: 24px; */
+    .content > div {
+        padding-top: 24px;
     }
 }
 
