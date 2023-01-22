@@ -1,0 +1,108 @@
+.container {
+    min-height: 1100px;
+    padding: 0 24px;
+}
+.wrapper {
+    padding: 0 24px;
+}
+.heading {
+    color: white;
+    padding: 48px 0;
+    border-bottom: 1px solid #333;
+}
+.heading > h1 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: -.05rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.main {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 48px auto 0;
+}
+
+.nav {
+    color: #888888;
+    margin-right: 24px;
+    flex: 1;
+    max-width: 204px;
+}
+.nav > ul {
+    display: flex;
+    flex-direction: column;
+}
+.nav > ul li:not(.team, .account) {
+    padding: 8px 12px;
+    margin-left: -12px;
+    margin-right: 24px;
+    border-radius: 6px;
+    letter-spacing: -.025rem;
+}
+.nav > ul li:not(.team, .account):hover {
+    background-color: #333333;
+    cursor: pointer;
+    color: white;
+}
+.nav > ul li span {
+    height: 24px;
+}
+.nav .img {
+    background: linear-gradient(to top left, purple, aqua);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.nav .team,
+.nav .account {
+    display: flex;
+    align-items: center;
+    gap: 7.5px;
+}
+.nav .team {
+    margin: 0 0 16px;
+}
+.nav .account {
+    margin: 32px 0 16px;
+}
+.nav .team > span,
+.nav .account > span {
+    text-transform: uppercase;
+    line-height: 2;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.content {
+    background-color: brown;
+    flex-grow: 1;
+}
+.content .wrapper {
+    background-color: darkgray;
+}
+
+
+@media (max-width: 960px) {
+    .nav .team,
+    .nav .account {
+        display: none;
+    }
+    .nav > ul li:nth-last-of-type(3) {
+        order: 1;
+    }
+    .content {
+        padding-top: 24px;
+    }
+}
+
+@media (min-width: 1250px) {
+    .nav {
+        max-width: 264px;
+    }
+    .content,
+    .content .wrapper {
+        max-width: 912px;
+    }
+}
