@@ -1,10 +1,7 @@
 .container {
-    min-height: 1100px;
     padding: 0 24px;
 }
-.wrapper {
-    padding: 0 24px;
-}
+
 .heading {
     color: white;
     padding: 48px 0;
@@ -20,6 +17,8 @@
 .main {
     display: flex;
     justify-content: center;
+    /* background-color: yellow; */
+    align-items: flex-start;
     max-width: 1200px;
     margin: 48px auto 0;
 }
@@ -29,13 +28,14 @@
     margin-right: 24px;
     flex: 1;
     max-width: 204px;
+    position: sticky;
+    top: 20px;
 }
 .nav > ul {
     display: flex;
     flex-direction: column;
 }
 .nav > ul li:not(.team, .account) {
-    padding: 8px 12px;
     margin-left: -12px;
     margin-right: 24px;
     border-radius: 6px;
@@ -46,8 +46,12 @@
     cursor: pointer;
     color: white;
 }
-.nav > ul li span {
-    height: 24px;
+.nav > ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 24px;
 }
 .nav .img {
     background: linear-gradient(to top left, purple, aqua);
@@ -78,13 +82,29 @@
 .content {
     background-color: brown;
     flex-grow: 1;
+    min-height: 2000px;
 }
 .content .wrapper {
     background-color: darkgray;
 }
 
+.setbtn {
+    display: none;
+}
+
 
 @media (max-width: 960px) {
+    .main {
+        margin-top: 0;
+    }
+    
+    .setbtn {
+        background-color: black;
+        padding: 24px 0;
+        display: block;
+        border-bottom: 1px solid #333;
+    }
+
     .nav .team,
     .nav .account {
         display: none;
@@ -92,8 +112,43 @@
     .nav > ul li:nth-last-of-type(3) {
         order: 1;
     }
+
+    .nav {
+        display: none;
+        margin-right: 0;
+    }
+
+    .nav:global(.active) {
+        display: block;
+        max-width: 100%;
+    }
+
+    .nav:global(.active) + div {
+        display: none;
+    }
+
+    .nav > ul li:not(.team, .account) {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 6px;
+        letter-spacing: -.025rem;
+    }
+
+    .nav > ul li:not(.team, .account):hover {
+        background-color: transparent;
+        color: inherit;
+    }
+
+    .nav > ul li a {
+        display: inline-block;
+        width: 100%;
+        padding: 24px 0;
+        color: white;
+        border-bottom: 1px solid #333;
+    }
+
     .content {
-        padding-top: 24px;
+        /* padding-top: 24px; */
     }
 }
 
