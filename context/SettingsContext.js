@@ -7,6 +7,7 @@ const SettingsProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(settingsReducer, {
         isNavOpen: true,
+        isLoading: false,
     });
 
     return (

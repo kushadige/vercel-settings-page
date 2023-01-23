@@ -1,6 +1,19 @@
+import { useState } from 'react';
 import styles from './styles.module.css';
 
 const General = () => {
+
+    const [form, setForm] = useState({
+        team_input: 'kushadige-team',
+    });
+
+    const handleChange = e => {
+        setForm(prev => ({
+            ...prev,
+            [e.target.id]: e.target.value,
+        }));
+    }
+
     return (
         <div>
             <section className={styles.fieldset}>
@@ -9,7 +22,7 @@ const General = () => {
                     <p className={styles.fieldset_p}>This is your team's visible name within Vercel. For example, the name of your company or department.</p>
                     <div className={styles.input_wrapper}>
                         <div className={styles.input_box}>
-                            <input type="text" value="kushadige-team" />
+                            <input type="text" value={form.team_input} id="team_input" onChange={handleChange} />
                         </div>
                     </div>
                 </div>
@@ -31,7 +44,7 @@ const General = () => {
                             <span>vercel.com/</span>
                         </div>
                         <div className={styles.input_box}>
-                            <input type="text" value="kushadige-team" />
+                            <input type="text" value={form.team_input} id="team_input" onChange={handleChange} />
                         </div>
                     </div>
                 </div>

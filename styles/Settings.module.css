@@ -1,11 +1,20 @@
-.container {
-    padding: 0 24px;
-}
+/* .dashboard {
+    background-color: purple;
+} */
 
 .heading {
     color: white;
-    padding: 48px 0;
-    border-bottom: 1px solid #333;
+    padding: 48px 24px;
+    position: relative;
+}
+.heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #333;
 }
 .heading > h1 {
     font-size: 2.2rem;
@@ -14,10 +23,13 @@
     max-width: 1200px;
     margin: 0 auto;
 }
+.main_wrapper {
+    width: 100%;
+    padding: 0 24px;
+}
 .main {
     display: flex;
     justify-content: center;
-    /* background-color: yellow; */
     align-items: flex-start;
     max-width: 1200px;
     margin: 48px auto 0;
@@ -29,7 +41,7 @@
     flex: 1;
     min-width: 204px;
     position: sticky;
-    top: 20px;
+    top: 60px;
 }
 .nav > ul {
     display: flex;
@@ -38,21 +50,26 @@
 .nav > ul li:not(.team, .account) {
     margin-left: -12px;
     margin-right: 24px;
-    border-radius: 6px;
     letter-spacing: -.025rem;
-}
-.nav > ul li:not(.team, .account):hover {
-    background-color: #333333;
-    cursor: pointer;
-    color: white;
 }
 .nav > ul li a {
     display: inline-block;
+    cursor: pointer;
     width: 100%;
     padding: 8px 12px;
     font-size: 16px;
     line-height: 24px;
+    border-radius: 6px;
 }
+.nav > ul li a:hover,
+.nav > ul li a:focus {
+    background-color: #333333;
+    color: white;
+}
+.nav > ul li a.active {
+    color: white;
+}
+
 .nav .img {
     background: linear-gradient(to top left, purple, aqua);
     height: 20px;
@@ -145,6 +162,11 @@
         padding: 24px 0;
         color: white;
         border-bottom: 1px solid #333;
+        border-radius: 0;
+    }
+    .nav > ul li a:hover,
+    .nav > ul li a:focus {
+        background-color: transparent;
     }
 
     .content > div {

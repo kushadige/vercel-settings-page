@@ -1,0 +1,157 @@
+/* .header {
+    overflow: visible;
+} */
+.nav_menu {
+    height: 64px;
+    padding: 0 24px;
+}
+.overflow_menu {
+    height: 48px;
+    font-size: 15px;
+    padding: 0 24px;
+    margin-top: -12px;
+    display: flex;
+    align-items: center;
+    overflow: scroll;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: black;
+}
+.overflow_menu::-webkit-scrollbar,
+.overflow_menu::-webkit-scrollbar-thumb,
+.overflow_menu::-webkit-scrollbar-track,
+.overflow_menu::-webkit-scrollbar-button,
+.overflow_menu::-webkit-scrollbar-corner {
+    appearance: none;
+    height: 0;
+}
+
+.overflow_menu ul {
+    display: flex;
+    margin-left: -12px;
+}
+.overflow_menu ul li a {
+    display: inline-block;
+    color: #888888;
+    padding: 12px;
+    transition: color .2s ease;
+    position: relative;
+    white-space: nowrap;
+}
+.overflow_menu ul li a.active,
+.overflow_menu ul li a:hover {
+    color: white;
+}
+.overflow_menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 80%;
+    height: 0px;
+    transform: translateX(-50%);
+    background-color: transparent;
+}
+.overflow_menu ul li a.active::after {
+    background-color: white;
+    height: 2px;
+}
+.overflow_menu :has(a:hover) .tab_highlight {
+    background-color: #333;
+}
+.overflow_menu .tab_highlight {
+    position: absolute;
+    border-radius: 5px;
+    top: 20%;
+    left: 0;
+    width: 0;
+    height: 64%;
+    background-color: transparent;
+    pointer-events: none;
+    transition-duration: 150ms;
+}
+
+.product_banner {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    background-color: #333;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.product_banner::before,
+.product_banner::after {
+    position: absolute;
+    content: '';
+    height: 150px;
+    width: 750px;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: bgSpin 3s ease infinite alternate;
+    filter: blur(50px);
+}
+.product_banner::before {
+    background: linear-gradient(to right, #1E487D, #47305F);
+    left: 50%;
+}
+.product_banner::after {
+    background: linear-gradient(to left, #47305F,#1E487D);
+    left: 50%;
+}
+
+.product_banner_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 24px;
+    font-size: 15px;
+}
+
+.product_banner_content .btn {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 6px 12px;
+    min-width: 80px;
+    font-size: 14px;
+    height: 32px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+.product_banner_content .btn.secondary {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+.product_banner_content .btn.secondary:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .product_banner_content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@keyframes bgSpin {
+    from {
+        height: 1000px;
+        width: 1000px;
+        background-size: 100% 100%;
+    }
+    to {
+        height: 750px;
+        width: 750px;
+        background-size: 300% 300%;
+    }
+}

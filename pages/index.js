@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useLayoutEffect } from 'react';
-import SettingsProvider from '../context/SettingsContext';
 
 export default function Home() {
   
@@ -19,5 +18,5 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
     </div>
-)
+  )
 }

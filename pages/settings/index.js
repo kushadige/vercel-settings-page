@@ -1,13 +1,7 @@
-import Settings from "../../presentation/Settings"
-import General from "../../presentation/Settings/General"
+import General from "../../presentation/Settings/General";
 
-export default function route() {
-
+export default function settings() {
     return (
-        <div>
-            <Settings>
-                <General />
-            </Settings>
-        </div>
-    )
-}
+        <General />
+    );
+};

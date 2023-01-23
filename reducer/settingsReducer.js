@@ -5,6 +5,11 @@ export default function reducer(state, action) {
                 ...state,
                 isNavOpen: action.payload,
             };
+        case 'SET_IS_LOADING':
+            return {
+                ...state,
+                isLoading: action.payload,
+            };
         default: 
             return {
                 ...state,
